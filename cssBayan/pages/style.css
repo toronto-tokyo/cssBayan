@@ -93,6 +93,19 @@ h1{
 	transform: rotate(45deg);
 }
 
+.meme-item__img{
+	margin: 0 auto;
+	width: calc(12.5rem + ((31.25 - 12.5) * 16) * ((100vw - 20rem) / (1920 - 320)));
+	max-height: 0px;
+	overflow: hidden;
+	transition: 0.5s;
+}
+
 img{
-	display: none;
+	width: 100%;
+	border-radius: 5px;
+}
+
+.meme-item__input:checked ~ .meme-item__img{
+	max-height: calc(26rem + ((86.66 - 26) * 16) * ((100vw - 20rem) / (1920 - 320)));
 }
