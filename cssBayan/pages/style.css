@@ -1,0 +1,223 @@
+@font-face{
+   font-family: 'Roboto';
+   src: url('../assets/fonts/Roboto-Bold.ttf');
+}
+
+/*Обнуление*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+
+html::-webkit-scrollbar{
+	width: 0px;
+}
+
+body{
+   font-family: 'Roboto';
+	background-color: #f0ecd1;
+	font-size: 1.5rem;
+	color: rgb(24, 24, 247);
+}
+
+.memes{
+	padding: calc(0.9375rem + (4 * 16) * ((100vw - 20rem) / (1920 - 320))) 0;
+}
+
+.memes__container{
+	padding: 0 10vw;
+}
+
+h1{
+	color: #000;
+	font-size: 1.5em;
+	text-transform: capitalize;
+	padding: 0 0 calc(0.9375rem + (1 * 16) * ((100vw - 20rem) / (1920 - 320))) 0;
+}
+
+.h1-hr{
+	background-color: #bbbbb7;
+	height: calc(0.0625rem + (0.0625 * 16) * ((100vw - 20rem) / (1920 - 320)));
+}
+
+.capitalize{
+	text-transform: uppercase;
+}
+
+.meme-item__text{
+	display: block;
+}
+
+.meme-item__title{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-transform: capitalize;
+	padding: 0.5em 0;
+}
+.meme-item__icon{
+	display: inline-block;
+	width: calc(1.875rem + ((3.875 - 1.875) * 16) * ((100vw - 20rem) / (1920 - 320)));
+	transition: transform 0.3s;
+}
+
+.meme-item__input{
+	display: none;
+}
+
+.meme-item__input:checked ~.meme-item__text{
+	transition: transform 0.3s;
+	color: rgb(0, 0, 0);
+}
+
+.meme-item__input:checked ~ .meme-item__text .meme-item__icon{
+	transform: rotate(45deg);
+}
+
+.meme-item__img{
+	display: block;
+	margin: 0 auto;
+	height: calc(12.5rem + ((31.25 - 12.5) * 16) * ((100vw - 20rem) / (1920 - 320)));
+	height: 0px;
+	overflow: hidden;
+	transition: 0.2s;
+	object-fit: contain;
+}
+
+.student1-meme{
+	background: url("../assets/img/student1.png") 50% / contain no-repeat;
+}
+
+.final-test-meme{
+	background: url("../assets/img/final-test.png") 50% / contain no-repeat;
+}
+
+.find-job-meme{
+	background: url("../assets/img/find-job.jpg") 50% / contain no-repeat;
+}
+
+.rss-stages{
+	background: url("../assets/img/rss-stages.jpg") 50% / contain no-repeat;
+}
+
+.requirement-meme{
+	background: url("../assets/img/requirements.jpg") 50% / contain no-repeat;
+}
+
+.img{
+	display: block;
+	transform: scale(0);
+	height: 100%;
+	width: 100%;
+}
+
+.meme-item__input:checked ~ .meme-item__text .meme-item__img{
+	padding: 0.5em 0 0.5em 0;
+	height: calc(16.625rem + ((35.625 - 15.625) * 16) * ((100vw - 20rem) / (1920 - 320)));
+}
+
+.meme-item__input:checked ~ .meme-item__text .meme-item__img .img{
+	transition: transform 0.5s;
+	transform: scale(1);
+}
+
+.md-dark{
+	color: #000;
+}
+
+.material-icons-outlined.md-dark{
+	font-weight: 700;
+	font-size: 1.25em;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.meme-item__icon{
+		opacity: 0;
+	}
+
+	.meme-list:hover .meme-item__icon{
+		transition: opacity 0.15s;
+		opacity: 1;
+	}
+
+	.meme-item__text:hover,
+	.meme-list:hover{
+		cursor: pointer;
+	}
+
+	.meme-item__text{
+		transition: color 0.15s;
+	}
+
+	.meme-list:hover .meme-item__text{
+		color: #000;
+	}
+
+	.meme-item__text:hover .meme-item__img{
+		transition: 0s;
+		padding: 0.5em 0 0.5em 0;
+		height: calc(16.625rem + ((35.625 - 15.625) * 16) * ((100vw - 20rem) / (1920 - 320)));
+	}
+
+	.meme-item__text:hover .meme-item__img .img{
+		transition: 0.5s;
+		transform: scale(1);
+	}
+
+	.meme-item__text:hover .meme-item__title .meme-item__icon{
+		transition: transform 0.3s;
+		transform: rotate(45deg);
+	}
+
+	.meme-item__text:active .meme-item__title{
+		color: rgb(24, 24, 247);
+	}
+
+	.meme-item__text:active .meme-item__title .md-dark{
+		color: rgb(24, 24, 247);
+	}
+}
+
+@media(min-width: 45em){
+	body{
+		font-size: 1.75em;
+	}
+}
+
+@media(min-width: 60em){
+	body{
+		font-size: calc(1.75em + ((2.5 - 1.75) * 16) * ((100vw - 60rem) / (1920 - 960)));
+	}
+}
