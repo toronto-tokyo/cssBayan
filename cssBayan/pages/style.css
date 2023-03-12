@@ -78,13 +78,13 @@ h1{
 
 .meme-item__text{
 	display: block;
-	padding: 0.5em 0;
 }
 
 .meme-item__title{
 	display: flex;
 	justify-content: space-between;
 	text-transform: capitalize;
+	padding: 0.5em 0;
 }
 .meme-item__icon{
 	display: inline-block;
@@ -144,7 +144,7 @@ h1{
 }
 
 .meme-item__input:checked ~ .meme-item__text .meme-item__img{
-	padding: 1em 0 0.5em 0;
+	padding: 0.5em 0 0.5em 0;
 	height: calc(16.625rem + ((35.625 - 15.625) * 16) * ((100vw - 20rem) / (1920 - 320)));
 }
 
@@ -178,7 +178,7 @@ h1{
 
 	.meme-item__text:hover .meme-item__img{
 		transition: 0s;
-		padding: 1em 0 0.5em 0;
+		padding: 0.5em 0 0.5em 0;
 		height: calc(16.625rem + ((35.625 - 15.625) * 16) * ((100vw - 20rem) / (1920 - 320)));
 	}
 
