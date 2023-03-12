@@ -90,6 +90,7 @@ h1{
 	display: inline-block;
 	width: calc(1.875rem + ((3.875 - 1.875) * 16) * ((100vw - 20rem) / (1920 - 320)));
 	background: url('../assets/icon/add-icon.svg') 50% / contain no-repeat;
+	transition: 0.3s;
 }
 
 .meme-item__input{
@@ -194,6 +195,8 @@ h1{
 	.meme-item__text:active .meme-item__title{
 		color: rgb(24, 24, 247);
 	}
+
+}
 
 @media(min-width: 45em){
 	body{
