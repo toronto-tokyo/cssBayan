@@ -83,14 +83,14 @@ h1{
 .meme-item__title{
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	text-transform: capitalize;
 	padding: 0.5em 0;
 }
 .meme-item__icon{
 	display: inline-block;
 	width: calc(1.875rem + ((3.875 - 1.875) * 16) * ((100vw - 20rem) / (1920 - 320)));
-	background: url('../assets/icon/add-icon.svg') 50% / contain no-repeat;
-	transition: 0.3s;
+	transition: transform 0.3s;
 }
 
 .meme-item__input{
@@ -153,6 +153,15 @@ h1{
 	transform: scale(1);
 }
 
+.md-dark{
+	color: #000;
+}
+
+.material-icons-outlined.md-dark{
+	font-weight: 700;
+	font-size: 1.25em;
+}
+
 @media (hover: hover) and (pointer: fine) {
 	.meme-item__icon{
 		opacity: 0;
@@ -188,7 +197,7 @@ h1{
 	}
 
 	.meme-item__text:hover .meme-item__title .meme-item__icon{
-		transition: 0.3s;
+		transition: transform 0.3s;
 		transform: rotate(45deg);
 	}
 
@@ -196,6 +205,9 @@ h1{
 		color: rgb(24, 24, 247);
 	}
 
+	.meme-item__text:active .meme-item__title .md-dark{
+		color: rgb(24, 24, 247);
+	}
 }
 
 @media(min-width: 45em){
