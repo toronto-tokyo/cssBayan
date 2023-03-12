@@ -73,16 +73,19 @@ h1{
 }
 
 .meme-item__text{
+	display: block;
+	padding: 0.5em 0;
+}
+
+.meme-item__title{
 	display: flex;
 	justify-content: space-between;
 	text-transform: capitalize;
 }
-
 .meme-item__icon{
 	display: inline-block;
 	width: calc(1.875rem + ((3.875 - 1.875) * 16) * ((100vw - 20rem) / (1920 - 320)));
 	background: url('../assets/icon/add-icon.svg') 50% / contain no-repeat;
-	transition:transform 0.3s;
 }
 
 .meme-item__input{
@@ -90,6 +93,7 @@ h1{
 }
 
 .meme-item__input:checked ~.meme-item__text{
+	transition: transform 0.3s;
 	color: rgb(0, 0, 0);
 }
 
@@ -98,29 +102,59 @@ h1{
 }
 
 .meme-item__img{
+	display: block;
 	margin: 0 auto;
-	width: calc(12.5rem + ((31.25 - 12.5) * 16) * ((100vw - 20rem) / (1920 - 320)));
-	max-height: 0px;
+	height: calc(12.5rem + ((31.25 - 12.5) * 16) * ((100vw - 20rem) / (1920 - 320)));
+	height: 0px;
 	overflow: hidden;
-	transition: 0.5s;
+	transition: 0.2s;
+	object-fit: contain;
 }
 
-img{
+.student1-meme{
+	background: url("../assets/img/student1.png") 50% / contain no-repeat;
+}
+
+.final-test-meme{
+	background: url("../assets/img/final-test.png") 50% / contain no-repeat;
+}
+
+.find-job-meme{
+	background: url("../assets/img/find-job.jpg") 50% / contain no-repeat;
+}
+
+.rss-stages{
+	background: url("../assets/img/rss-stages.jpg") 50% / contain no-repeat;
+}
+
+.requirement-meme{
+	background: url("../assets/img/requirements.jpg") 50% / contain no-repeat;
+}
+
+.img{
+	display: block;
+	transform: scale(0);
+	height: 100%;
 	width: 100%;
-	border-radius: 5px;
 }
 
-.meme-item__input:checked ~ .meme-item__img{
-	max-height: calc(26rem + ((86.66 - 26) * 16) * ((100vw - 20rem) / (1920 - 320)));
+.meme-item__input:checked ~ .meme-item__text .meme-item__img{
+	padding: 1em 0 0.5em 0;
+	height: calc(16.625rem + ((40.625 - 15.625) * 16) * ((100vw - 20rem) / (1920 - 320)));
+}
+
+.meme-item__input:checked ~ .meme-item__text .meme-item__img .img{
+	transition: transform 0.5s;
+	transform: scale(1);
 }
 
 @media (hover: hover) and (pointer: fine) {
 	.meme-item__icon{
 		opacity: 0;
-		transition: 0.15s;
 	}
 
 	.meme-list:hover .meme-item__icon{
+		transition: opacity 0.15s;
 		opacity: 1;
 	}
 
@@ -129,12 +163,31 @@ img{
 		cursor: pointer;
 	}
 
-
 	.meme-item__text{
 		transition: color 0.15s;
 	}
 
 	.meme-list:hover .meme-item__text{
 		color: #000;
+	}
+
+	.meme-item__text:hover .meme-item__img{
+		transition: 0s;
+		padding: 1em 0 0.5em 0;
+		height: calc(16.625rem + ((40.625 - 15.625) * 16) * ((100vw - 20rem) / (1920 - 320)));
+	}
+
+	.meme-item__text:hover .meme-item__img .img{
+		transition: 0.5s;
+		transform: scale(1);
+	}
+
+	.meme-item__text:hover .meme-item__title .meme-item__icon{
+		transition: 0.3s;
+		transform: rotate(45deg);
+	}
+
+	.meme-item__text:active .meme-item__title{
+		color: rgb(24, 24, 247);
 	}
 }
