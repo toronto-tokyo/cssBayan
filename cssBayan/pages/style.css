@@ -82,11 +82,15 @@ h1{
 	display: inline-block;
 	width: calc(1.875rem + ((3.875 - 1.875) * 16) * ((100vw - 20rem) / (1920 - 320)));
 	background: url('../assets/icon/add-icon.svg') 50% / contain no-repeat;
-	transition: 0.5s;
+	transition:transform 0.3s;
 }
 
 .meme-item__input{
 	display: none;
+}
+
+.meme-item__input:checked ~.meme-item__text{
+	color: rgb(0, 0, 0);
 }
 
 .meme-item__input:checked ~ .meme-item__text .meme-item__icon{
@@ -108,4 +112,29 @@ img{
 
 .meme-item__input:checked ~ .meme-item__img{
 	max-height: calc(26rem + ((86.66 - 26) * 16) * ((100vw - 20rem) / (1920 - 320)));
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.meme-item__icon{
+		opacity: 0;
+		transition: 0.15s;
+	}
+
+	.meme-list:hover .meme-item__icon{
+		opacity: 1;
+	}
+
+	.meme-item__text:hover,
+	.meme-list:hover{
+		cursor: pointer;
+	}
+
+
+	.meme-item__text{
+		transition: color 0.15s;
+	}
+
+	.meme-list:hover .meme-item__text{
+		color: #000;
+	}
 }
